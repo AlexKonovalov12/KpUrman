@@ -1,0 +1,875 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!--  Title -->
+    <title>Жилой комплекс URMAN</title>
+
+    <!-- Font Google -->
+    <link href="https://fonts.googleapis.com/css?family=Manrope" rel="stylesheet">
+    <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+
+    <!-- custom styles (optional) -->
+    <link href="assets/css/plugins.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <link href="assets/css/projectscss.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="assets/css/swiper-style.css" />
+    
+    <script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+
+
+    <!-- Yandex.Metrika counter -->
+    <script type="text/javascript">
+        (function (m, e, t, r, i, k, a) {
+            m[i] = m[i] || function () { (m[i].a = m[i].a || []).push(arguments) };
+            m[i].l = 1 * new Date();
+            for (var j = 0; j < document.scripts.length; j++) { if (document.scripts[j].src === r) { return; } }
+            k = e.createElement(t), a = e.getElementsByTagName(t)[0], k.async = 1, k.src = r, a.parentNode.insertBefore(k, a)
+        })
+            (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+        ym(90829262, "init", {
+            clickmap: true,
+            trackLinks: true,
+            accurateTrackBounce: true,
+            webvisor: false
+        });
+    </script>
+    <noscript>
+        <div><img src="https://mc.yandex.ru/watch/90829262" style="position:absolute; left:-9999px;" alt="" /></div>
+    </noscript>
+    <!-- /Yandex.Metrika counter -->
+
+
+
+
+</head>
+
+<body data-dsn-grid-mousemove="true">
+
+    <!--  DSN Loader
+    ================================================== -->
+    <div class="dsn-loader">
+        <div class="dsn-up"></div>
+        <div class="dsn-progress-page"></div>
+        <div class="dsn-down"></div>
+    </div>
+    <!-- End DSN Loader
+    ================================================== -->
+
+
+    <!-- Sticky Menu
+================================================== -->
+    <div class="header-top nav-mobile" style="visibility: visible;">
+        <div class="header-container">
+
+            <div class="menu-icon" data-dsn-grid="parallax" data-dsn-grid-move="50">
+                <div class="icon-m">
+                    <span class="menu-icon__line menu-icon__line-left"></span>
+                    <span class="menu-icon__line"></span>
+                    <span class="menu-icon__line menu-icon__line-right"></span>
+                </div>
+            </div>
+
+            <div class="nav">
+                <div class="inner">
+                    <div class="logo">
+                        <a href="#">
+                            <img src="assets/img/logo-red-green.webp" alt="">
+                        </a>
+                    </div>
+                    <div class="nav__content">
+                        <ul class="nav__list">
+                            <li class="nav__list-item"><a href="project1.html">Расположение</a></li>
+                            <li class="nav__list-item"><a href="project2.html">Генеральный план </a></li>
+                            <li class="nav__list-item"><a href="project3.html">Концепция</a></li>
+                            <li class="nav__list-item"><a href="projects.html">Проекты</a></li>
+                            <li class="nav__list-item"><a target="_blank" href="https://vm-stroy.pro">Застройщик</a>
+                            </li>
+                            <li class="nav__list-item"><a href="contact.html">Контакты</a></li>
+                        </ul>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+    <!-- End Sticky Menu
+================================================== -->
+    <div class="wrapper" id="wrapper">
+        <div style="" class="wrapper_title">
+            <div class="wrapper_text">
+                <div><span style="    color: #2c4966; text-shadow:0px 0px 0px #666 ;" class="project">Проект:</span>
+                </div>
+                <div><span style="    color: #2c4966;text-shadow:0px 0px 0px #666 ;" class="burn">york</span></div>
+            </div>
+            </br>
+            <div class="wrapper_icons">
+                <img style="filter: drop-shadow(0px 0px 0px #666);" class="wrapper_icon"
+                    src="images/york-icons.webp">
+            </div>
+        </div>
+
+        <div class="wrapper_info">
+            <div class="wrapper_price">
+                <img class="ruble_svg" src="images/ruble_img.png">
+
+                <div style="display: none;" id="price1Alt" class="head_price">
+                    <?=$projectAlt['p1']?>
+                </div>
+
+                <div id="price1" class="head_price">
+                    <?=$project['p1']?>
+                </div>
+            </div>
+            <div class="wrapper_button">
+                <a href="map.php"><button name="bt" class="btn" type="button">Выбрать участок</button></a>
+            </div>
+        </div>
+        <div class="project_swap">
+
+            <a href="/?project=laiden">
+                <div style="width:310px;" class="project_swap_var left_var">laiden</div>
+            </a>
+
+            <div class="project_check">
+                <div id="main_style" class="project_var activee">
+                    classic
+                </div>
+                <div id="alt_style" class="project_var">
+                    white
+                </div>
+            </div>
+
+            <a href="/?project=verona">
+                <div class="project_swap_var right_var">verona</div>
+            </a>
+
+        </div>
+    </div>
+    <div class="slider_wrapper">
+        <div class="slider_info">
+            <div class="slider_text">
+                <div class="text_head">минимализм</div>
+                <div class="text_bottom">Отсекая всё лишнее, оставлять рациональное</div>
+            </div>
+            <div class="slider_button">
+                <button class="slider_btn clbck" type="button">записаться<br> на экскурсию</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="swiper">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide">
+                <img src="images/york-1.webp">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/york-2.webp">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/york-3.webp">
+            </div>
+            <div class="swiper-slide">
+                <img src="images/york-4.webp">
+            </div>
+        </div>
+    
+        <div class="swiper-button-prev" id="swiper_one"></div>
+        <div class="swiper-button-next" id="swiper_two"></div>
+    </div>
+
+    <main class="main" style="">
+
+        <div class="stages has-popup over-hidden">
+            <div class="stages_head">
+                <div class="stage_head">
+                    <div class="stage">план дома</div>
+                    <div class="stage_area">92m<span class="kvadr">2</span>
+                    </div>
+                </div>
+                <div class="stage_image">
+                    <a href="images/york-floor.webp" class="p-relative over-hidden d-flex">
+
+
+                        <img class="stage_img contain-bg-img"
+                            src="images/york-floor.webp">
+                        <div class="plus"></div>
+
+                    </a>
+                </div>
+            </div>
+            <div class="stages_info">
+                <div class="stage_rooms">
+                    <div class="stage">экспликация помещений</div>
+                    <div style="margin-bottom: 60px;" class="stage_area">Габариты дома: 10,51х16,62m
+                    </div>
+                </div>
+                <div class="stage_list">
+                    <div class="stage_list_info">
+                        <ul class="stage_list_nondec">
+                            <li>Терраса:</li>
+                            <li>Санузел:</li>
+                            <li>Санузел:</li>
+                            <li>Гардероб:</li>
+                            <li>Гостиная:</li>
+                            <li>Кухня:</li>
+                            <li>Спальня:</li>
+                            <li>Спальня:</li>
+                            <li>Спальня:</li>
+                            <li>Холл:</li>
+
+                        </ul>
+                    </div>
+                    <div class="stage_list_area">
+                        <ul class="stage_list_nondec">
+                            <li>34,3m<span class="kvadr">2</span></li>
+                            <li>3,09m<span class="kvadr">2</span></li>
+                            <li>3,88m<span class="kvadr">2</span></li>
+                            <li>2,03m<span class="kvadr">2</span></li>
+                            <li>18,37m<span class="kvadr">2</span></li>
+                            <li>10,133m<span class="kvadr">2</span></li>
+                            <li>11,78m<span class="kvadr">2</span></li>
+                            <li>12,44m<span class="kvadr">2</span></li>
+                            <li>12,81m<span class="kvadr">2</span></li>
+                            <li>7,56m<span class="kvadr">2</span></li>
+
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="stage_button">
+            <button class="stage_btn clbck" type="button">изменить планировку</button>
+        </div>
+
+
+
+        <div class="border"></div>
+        <div class="calc_wrapper">
+            <h3 class="calc_title">калькулятор ипотеки</h3>
+            <p class="calc_title_text">Финансирование в соответствии с нормами Ислама</p>
+            <div class="calc_boxes">
+                <div class="calc_box">
+                    <div class="calc_box_txt">Стоимость недвижимости</div>
+                    <input style="    border: none;    width: 100%;" id="creditText" class="calc_box_price"
+                        value="650 000₽" />
+                    <div class="slidecontainer">
+                        <input type="range" min="650000" max="20000000" value="50" class="slider" id="creditRange">
+                    </div>
+                    <div class="calc_box_bottom">
+                        <div class="calc_box_bottom_txt">От 650 тыс.</div>
+                        <div class="calc_box_bottom_txt">До 20 млн.</div>
+                    </div>
+                </div>
+                <div class="calc_box">
+                    <div class="calc_box_txt">Первоначальный взнос</div>
+                    <input style="    border: none;    width: 100%;" id="firstContributionText" class="calc_box_price"
+                        value="450 000₽" />
+                    <div class="slidecontainer">
+                        <input type="range" min="450000" max="1500000" class="slider" id="firstContributionRange">
+                    </div>
+                    <div class="calc_box_bottom">
+                        <div class="calc_box_bottom_txt">От 450 тыс.</div>
+                        <div class="calc_box_bottom_txt">До 1.5 млн.</div>
+                    </div>
+                </div>
+                <div class="calc_box">
+                    <div class="calc_box_txt">Срок ипотеки</div>
+                    <input style="    border: none;    width: 100%;" id="returnPeriodText" class="calc_box_price"
+                        value="5 лет" />
+                    <div class="slidecontainer">
+                        <input type="range" min="1" max="30" class="slider" id="returnPeriodRange">
+                    </div>
+                    <div class="calc_box_bottom">
+                        <div class="calc_box_bottom_txt">От 1 года</div>
+                        <div class="calc_box_bottom_txt">До 30 лет</div>
+                    </div>
+                </div>
+
+                <!-- Процентная ставка -->
+                <div class="card-body" style="display:none">
+                    <label for="percentNumber">Годовая процентная ставка:</label>
+                    <input type="text" id="percentNumber" class="form-control" aria-describedby="percentNumberHolder"
+                        value="5 %">
+                    <input type="range" class="form-control-range" id="percentNumberText" min="1" max="30" step="0.01">
+                    <small id="percentNumberHolder" class="form-text text-muted">
+                        Столько процентов начисляется на ваш долг в год.
+                    </small>
+                </div>
+                <!-- / Процентная ставка -->
+
+                <div class="calc_box">
+                    <div class="calc_flex">
+                        <img class="calc_img" src="images/calcimg1.svg">
+                        <div class="calc_flex_info">
+                            <div class="calc_box_txt">Ежемесячный платеж</div>
+                            <div id="payment" class="calc_box_price">650 000₽</div>
+                        </div>
+                    </div>
+                    <div class="calc_flex">
+                        <img class="calc_img" src="images/calcimg2.svg">
+                        <div class="calc_flex_info">
+                            <div class="calc_box_txt">Сумма по ипотеке</div>
+                            <div id="common" class="calc_box_price">650 000₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="calc_check">
+                <label class="calc_check_container">Я — индивидуальный предприниматель/собственник бизнеса
+                    <input id="check-option" type="checkbox">
+                    <span class="checkmark"></span>
+                </label>
+            </div>
+            <div class="calc_button">
+                <div class="calc_button_wrapper"><button class="calc_btn clbck" type="button">заявка на
+                        оформление</button>
+                </div>
+                <div class="calc_button_text">*Расчёт носит информативный характер. Точные условия вы получите после
+                    подачи пакета документов</div>
+            </div>
+        </div>
+        <div class="border"></div>
+
+        </div>
+    </main>
+    <footer class="contact-p section-padding">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-6">
+                    <div class="contact-info" style="padding: 0;">
+                        <div class="title-box">
+                            <h3>КОНТАКТЫ</h3>
+                            <div class="lineStagger"></div>
+                        </div>
+
+                        <div class="desc">
+                            <ul>
+                                <li>Остались вопросы? </li>
+                                <li>Ответим на все ваши вопросы.</li>
+
+                                <li>Проведем экскурсию, расскажем подробнее о жилом комплексе.</li>
+                            </ul>
+                        </div>
+
+                        <div class="info-inf">
+                            <div class="row pl-0 pr-0">
+                                <div class="col-md-12" style="padding-left: 0px;">
+                                    <div class="in-box">
+                                        <h4>АДРЕС</h4>
+                                        <p>Нижнекамск, ул. Сююмбике 7, RAMUS MALL, 5 этаж</p>
+                                        <p>Набережные Челны, ул.Академика Королева 2, 6 вход, 2 этаж, 2 офис
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-12" style="padding-left: 0px;">
+                                    <div class="in-box">
+                                        <h4>НОМЕР ТЕЛЕФОНА</h4>
+                                        <p>245-68-99</p>
+                                        <p>+7 (937) 294-72-19</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mail-dtls">
+                            <span>Электронная почта</span>
+                            <span class="maill">
+                                <a href="mailto:kp.urman@yandex.ru">kp.urman@yandex.ru</a>
+                            </span>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="form-box" style="padding: 0px;">
+                        <form id="contact-form" class="form" method="post" action="contact.php" data-toggle="validator">
+                            <div class="messages"></div>
+                            <div class="input__wrap controls">
+                                <div class="form-group">
+                                    <label>Как вас зовут?</label>
+                                    <input id="form_name" type="text" name="name" placeholder="Имя" required="required"
+                                        data-error="Обязательное поле">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Как с вами связаться?</label>
+                                    <input id="form_email" type="text" name="phone" placeholder="Номер телефона"
+                                        required="required" inputmode="tel" data-error="Обязательное поле">
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Комментарий (при желании) </label>
+                                    <textarea id="form_message" class="form-control" name="comment"
+                                        placeholder=""></textarea>
+                                    <div class="help-block with-errors"></div>
+                                </div>
+
+                                <button type="submit" class="custom-btn">
+                                    <span class="custom-btn__label">Отправить</span>
+
+                                    <span class="custom-btn__icon">
+
+                                        <span class="custom-btn__icon-small">
+                                            <!--?xml version="1.0" encoding="utf-8"?-->
+                                            <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 100 100" xml:space="preserve">
+                                                <polygon
+                                                    points="33.7,95.8 27.8,90.5 63.9,50 27.8,9.5 33.7,4.2 74.6,50 ">
+                                                </polygon>
+                                            </svg>
+
+                                        </span>
+
+                                        <span class="custom-btn__icon-circle">
+                                            <!--?xml version="1.0" encoding="utf-8"?-->
+                                            <!-- Generator: Adobe Illustrator 22.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+                                            <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                                                xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                                                viewBox="0 0 100 100" xml:space="preserve">
+                                                <path class="bottomcircle"
+                                                    d="M18.2,18.2c17.6-17.6,46-17.6,63.6,0s17.6,46,0,63.6s-46,17.6-63.6,0">
+                                                </path>
+                                                <path class="topcircle"
+                                                    d="M18.2,18.2c17.6-17.6,46-17.6,63.6,0s17.6,46,0,63.6s-46,17.6-63.6,0">
+                                                </path>
+                                            </svg>
+
+                                        </span>
+
+                                    </span>
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+
+    <script>
+        let wrapper = document.getElementById("wrapper");
+
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+            wrapper.style.backgroundImage = 'url(images/york-mobile.webp)';
+        } else {
+            wrapper.style.backgroundImage = 'url(images/york.webp)';
+        }
+    </script>
+    <script>
+        const swiper = new Swiper('.swiper', {
+            direction: 'horizontal',
+            loop: true,
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 30,
+                slideShadows: false,
+            },
+
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+        });
+    </script>
+
+    <script>
+        let phonePlace = document.getElementById('form_email')
+        phonePlace.addEventListener('click', function () {
+            if (phonePlace.value == '') {
+                phonePlace.value = '+7'
+            }
+        }) 
+    </script>
+    <script src="assets/js/jquery-3.1.1.min.js"></script>
+    <script src="assets/js/plugins.js"></script>
+    <script src="assets/js/dsn-grid.js"></script>
+    <script src="assets/js/custom.js"></script>
+    <script src="https://unpkg.com/imask"></script>
+
+
+
+    <script>
+        const CREDIT_MIN = 650000 // минимально возможный кредит
+        const CREDIT_MAX = 20000000 // максимально возможный кредит
+        const CREDIT_DEFAULT = 2000000
+
+        const CONTRIBUTION_MIN = 400000 // минимально возможный Первоначальный взнос
+        const CONTRIBUTION_MAX = 1500000 // максимально возможный Первоначальный взнос
+        const CONTRIBUTION_DEFAULT = 400000
+
+        const RETURN_PERIOD_MIN = 1 // минимально возможный срок кредита
+        const RETURN_PERIOD_MAX = 30 // максимально возможный срок кредита
+        const RETURN_PERIOD_DEFAULT = 5
+
+        // Минимально возможная процентная ставка.
+        const PERCENT_NUMBER_MIN = 1
+        // Максимально возможная процентная ставка.
+        const PERCENT_NUMBER_MAX = 20
+        const PERCENT_NUMBER_DEFAULT = 18.31
+
+
+
+
+
+
+        // Стоимость недвижимости
+        const creditText = document.querySelector('#creditText')
+        const creditRange = document.querySelector('#creditRange')
+        // Первоначальный взнос
+        const firstContributionText = document.querySelector('#firstContributionText')
+        const firstContributionRange = document.querySelector('#firstContributionRange')
+        // Срок кредита
+        const returnPeriodText = document.querySelector('#returnPeriodText')
+        const returnPeriodRange = document.querySelector('#returnPeriodRange')
+        // Процентная ставка.
+        const percentNumber = document.querySelector('#percentNumber')
+        const percentNumberRange = document.querySelector('#percentNumberText')
+
+
+
+
+
+        // Форматтер числа - Встроенный объект Intl с параметрами форматирования данных.
+        const formatterNumber = new Intl.NumberFormat('ru')
+
+        // Форматтер валюты.
+        const formatterCurrency = new Intl.NumberFormat('ru', {
+            style: 'currency',
+            currency: 'RUB',
+            // максимальное количество знаков после запятой
+            minimumFractionDigits: 0
+        })
+
+        // Форматтер даты.
+        const formatterDate = {
+            format(years) {
+                years = parseInt(years)
+                let count = years % 10
+                let txt = 'лет'
+
+                if (years >= 5 && years <= 20) {
+                    txt = 'лет'
+                } else {
+                    if (count === 1) {
+                        txt = 'год'
+                    } else {
+                        if (count >= 2 && count <= 4) {
+                            txt = 'года'
+                        }
+                    }
+                }
+
+                return years + ' ' + txt
+            }
+        }
+
+        // Форматтер процентов.
+        const formatterPercent = {
+            format(percent) {
+                percent = Number(parseFloat(percent).toFixed(2))
+
+                return `${percent} %`
+            }
+        }
+
+        /*
+            Порядок событий:
+            focus -> keydown -> keypress -> input -> keyup
+        */
+        // Событие "input" возникает при смене значения в поле <input>.
+
+        // для инпута "Стоимость недвижимости"
+        setDoubleDependencies(
+            creditText,
+            creditRange,
+            formatterNumber,
+            formatterCurrency,
+            CREDIT_MIN,
+            CREDIT_MAX,
+            CREDIT_DEFAULT,
+        )
+
+        // для инпута "Первоначальный взнос"
+        setDoubleDependencies(
+            firstContributionText,
+            firstContributionRange,
+            formatterNumber,
+            formatterCurrency,
+            CONTRIBUTION_MIN,
+            CONTRIBUTION_MAX,
+            CONTRIBUTION_DEFAULT,
+        )
+
+        // для инпута "Срок кредита"
+        setDoubleDependencies(
+            returnPeriodText,
+            returnPeriodRange,
+            formatterNumber,
+            formatterDate,
+            RETURN_PERIOD_MIN,
+            RETURN_PERIOD_MAX,
+            RETURN_PERIOD_DEFAULT,
+        )
+
+        // для инпута "Процентная ставка"
+        setDoubleDependencies(
+            percentNumber,
+            percentNumberText,
+            formatterNumber,
+            formatterPercent,
+            PERCENT_NUMBER_MIN,
+            PERCENT_NUMBER_MAX,
+            PERCENT_NUMBER_DEFAULT,
+        )
+
+        setReaction(
+            creditText,
+            creditRange,
+            firstContributionText,
+            firstContributionRange,
+            returnPeriodText,
+            returnPeriodRange,
+            percentNumber,
+            percentNumberText,
+            mainProcess
+        )
+
+        mainProcess()
+
+        /*
+            Функция принимает аргументы
+            (над какими элементами будет двойная зависимость,
+            Форматтер который определяет какой будет формат,
+            Целевой форматтер,
+            минимальное и максимальное значения инпута)
+        */
+        function setDoubleDependencies(
+            textElement,
+            rangeElement,
+            formatterNumber,
+            formatterGoal,
+            min,
+            max,
+            middle
+        ) {
+            // Среднее арифметическое min и max значений input'ов.
+            // const middle = (min + max) / 2
+
+            // Установить атрибуты min и max ползункам:
+            //	rangeElement.setAttribute('min', min)
+            //	rangeElement.setAttribute('max', max)
+
+            //rangeElement.parentNode.querySelector('.left').innerHTML = min
+            //rangeElement.parentNode.querySelector('.right').innerHTML = max
+
+
+            // Установить значение ползунка по умолчанию:
+            rangeElement.value = middle
+            // Установить значение input'а по умолчанию:
+            textElement.value = formatterGoal.format(middle)
+
+            // Добавить обработчик события "focus" инпуту.
+            textElement.addEventListener('focus', function (event) {
+                /*
+                    this - контекст. Ссылается на тот самый элемент,
+                    внутри которого произошло событие.
+                */
+                // Достать из строки только числа:
+                let number = ''
+
+                for (const letter of this.value) {
+                    if ('0123456789.,'.includes(letter)) {
+                        number += letter
+                    }
+                }
+
+                // Превратить строку number в число.
+                number = Number(parseFloat(number).toFixed(2))
+
+                // value хранит в себе значение input'а.
+                // Установить значением текущего элемента только число (без знака валюты).
+                this.value = formatterNumber.format(number)
+            })
+
+            // Добавить обработчик события "input" инпуту.
+            textElement.addEventListener('input', function inputHandler(event) {
+                /*
+                    this - контекст. Ссылается на тот самый элемент,
+                    внутри которого произошло событие.
+                */
+                // value хранит в себе значение input'а.
+
+                // Достать из строки только числа:
+                let number = ''
+
+                for (const letter of this.value) {
+                    if ('0123456789.,'.includes(letter)) {
+                        number += letter
+                    }
+                }
+
+                // Превратить строку number в число.
+                number = Number(parseFloat(number).toFixed(2))
+
+                /*
+                    Значение поля должно быть не менее минимального
+                    и не более максимально возможного.
+                */
+                if (number < min) {
+                    number = min
+                }
+
+                if (number > max) {
+                    number = max
+                }
+
+                /*
+                    Добавить изменение значения ползунка
+                    при изменении значения выбранного элемента.
+                */
+                rangeElement.value = number
+
+                number = formatterNumber.format(number)
+                // Записать в input отформатированное число.
+                this.value = number
+            })
+
+            // Добавить обработчик события "blur" инпуту.
+            textElement.addEventListener('blur', function (event) {
+                /*
+                    this - контекст. Ссылается на тот самый элемент,
+                    внутри которого произошло событие.
+                */
+                // Достать из строки только числа:
+                let number = ''
+
+                for (const letter of this.value) {
+                    if ('0123456789.,'.includes(letter)) {
+                        number += letter
+                    }
+                }
+                number = number.replace(',', '.')
+
+                // Превратить строку number в число.
+                number = Number(parseFloat(number).toFixed(2))
+
+                // value хранит в себе значение input'а.
+                this.value = formatterGoal.format(number)
+            })
+
+            // Добавить обработчик события "input" инпуту-ползунку.
+            rangeElement.addEventListener('input', function (event) {
+                // Присвоим значение ползунка инпуту.
+                textElement.value = formatterGoal
+                    .format(Number(parseFloat(this.value).toFixed(2)))
+            })
+        }
+
+        /*
+            Функция присвоит обработчик события нескольким элементам сразу.
+            Обработчик события передаётся последним аргументом.
+        */
+        function setReaction(...args) {
+            const handler = args.splice(-1)[0]
+            /*
+                Пройти по всем элементам массива args
+                и повесить им на событие 'input' обработчик handler.
+            */
+            for (const element of args) {
+                element.addEventListener('input', function (event) {
+                    handler.call(this, event, args.slice())
+                })
+            }
+        }
+
+        // Функция рассчитывает суммы выплат.
+        function mainProcess() {
+            const checkbox = document.querySelector('#check-option').checked
+
+
+
+
+
+            const credit = parseInt(creditRange.value)
+            const firstContribution = parseInt(firstContributionRange.value)
+            const returnPeriod = parseInt(returnPeriodRange.value) * 12
+            const percent = Number(parseFloat(percentNumberRange.value).toFixed(2)) / 100 / 12
+
+
+
+
+
+
+
+
+            // Рассчитать и присвоить значение элементу "Итого: в месяц".
+
+
+
+            const x = Math.pow(1 + percent, returnPeriod)
+            const payment = ((credit - firstContribution) * x * percent) / (x - 1)
+            document.querySelector('#payment')
+                .textContent = formatterCurrency.format(payment.toFixed(0))
+
+            // Рассчитать и присвоить значение элементу "Общая выплата".
+            const common = (payment * returnPeriod).toFixed(0)
+            document.querySelector('#common')
+                .textContent = formatterCurrency.format(common)
+
+
+
+            // Finally, chart loan balance, and interest and equity payments
+
+        }
+
+        // Chart monthly loan balance, interest and equity in an HTML <canvas> element.
+        // If called with no arguments then just erase any previously drawn chart.
+
+
+
+        $(document).ready(function () {
+            $('.clbck').click(function () {
+                $('html, body').animate({
+                    scrollTop: $("#footerForm").offset().top
+                }, 1000)
+            })
+        });
+
+
+    </script>
+
+    <!-- Roistat Counter Start -->
+    <script>
+        (function (w, d, s, h, id) {
+            w.roistatProjectId = id; w.roistatHost = h;
+            var p = d.location.protocol == "https:" ? "https://" : "http://";
+            var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/" + id + "/init?referrer=" + encodeURIComponent(d.location.href);
+            var js = d.createElement(s); js.charset = "UTF-8"; js.async = 1; js.src = p + h + u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
+        })(window, document, 'script', 'cloud.roistat.com', 'b1e98b15beceb494b0afd84cb26f028d');
+    </script>
+    <!-- Roistat Counter End -->
+
+</body>
+
+</html>

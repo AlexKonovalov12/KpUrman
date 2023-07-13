@@ -1,0 +1,324 @@
+.townhouse_modal {
+    display: none;
+}
+
+.town_wrapper {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 30px;
+    background-color: white;
+}
+
+.townhouses_wrapper {
+    background-color: white;
+    padding-bottom: 60px;
+}
+
+.head_text_town {
+    color: white;
+    font-weight: 300;
+    text-align: center;
+    margin-bottom: 20px;
+    letter-spacing: 2px;
+    margin-top: 200px;
+}
+
+.town_header {
+    color: #395446;
+    font-weight: 700;
+    letter-spacing: 3px;
+    font-size: 80px;
+    position: absolute;
+    top: 10%;
+    left: 8%;
+}
+
+.town_header span {
+    font-size: 20px;
+    background-color: #AC363B;
+    padding: 0 10px;
+    color: azure;
+    font-weight: 300;
+}
+
+
+
+.splide img {
+    border-radius: 30px 30px 0px 0px;
+}
+
+.slider_text {
+    position: absolute;
+    top: 7%;
+    left: 7%;
+}
+
+.slider_text p {
+    font-size: 60px;
+    color: #395446;
+    font-weight: 700;
+    text-align: start;
+    line-height: normal;
+}
+
+.slider_text span {
+    font-weight: 300;
+}
+
+.concept {
+    width: 90%;
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.townhouse_cback {
+    position: absolute;
+    top: 10%;
+    right: 5%;
+    color: aliceblue;
+    background-color: #395446;
+    border-radius: 30px;
+    width: 316px;
+    height: 55px;
+    font-size: 30px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+
+.town_map {
+    width: 1013px;
+    margin: 80px auto 30px;
+}
+
+.town_svg {
+    margin-bottom: 30px;
+}
+
+.map_buttons {
+    display: flex;
+    justify-content: space-around;
+
+}
+
+.map_btn {
+    width: 15%;
+    background-color: #395446;
+    height: 40px;
+    border-radius: 10px;
+    color: aliceblue;
+    font-weight: 700;
+    font-size: 25px;
+}
+
+.blocks {
+    margin-top: 100px;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 80px;
+}
+
+.town_blocks {
+    width: 80%;
+    margin-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    row-gap: 80px;
+}
+
+.blocks_head {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+}
+
+.blocks_head_text {
+    font-weight: 700;
+    font-size: 40px;
+    color: rgb(24, 23, 23);
+}
+
+.blocks_head_text p {
+    font-size: 20px;
+}
+
+.blocks_head_btn {
+    background-color: #395446;
+    color: aliceblue;
+    font-weight: 500;
+    font-size: 25px;
+    border-radius: 30px;
+    padding: 10px 30px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    max-height: 50px;
+}
+
+.block {
+    width: 40%;
+}
+
+.town_block {
+    width: 30%;
+}
+
+.block_info {
+    color: rgb(24, 23, 23);
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 30px;
+    font-weight: 700;
+}
+
+@media (max-width: 1570px) {
+    .explication {
+        font-size: 18px;
+    }
+}
+
+@media (max-width: 570px) {
+    .head_text_town {
+        margin-top: 30px;
+    }
+
+    .town_wrapper {
+        width: 95%;
+    }
+
+    .slider_text {
+        position: absolute;
+        top: 3%;
+        left: 7%;
+    }
+
+    .slider_text p {
+        font-size: 20px;
+
+    }
+
+    .townhouse_cback {
+        position: absolute;
+        bottom: 0;
+        right: 2%;
+        top: 2%;
+        border-radius: 30px;
+        width: 140px;
+        height: 40px;
+        font-size: 10px;
+    }
+
+    .town_map {
+        margin-top: 10px;
+        width: 100%;
+
+    }
+
+    .town_svg {
+        height: 30vh;
+        margin: 0;
+    }
+
+    .blocks {
+        margin-top: 60px;
+        padding: 0 10px;
+        row-gap: 20px;
+    }
+
+    .blocks_head {
+        flex-wrap: wrap;
+        width: 100%;
+        row-gap: 10px;
+    }
+
+    .blocks_head_text {
+        font-size: 30px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .blocks_head_btn {
+        background-color: #395446;
+        color: aliceblue;
+        font-weight: 500;
+        font-size: 25px;
+        border-radius: 30px;
+        padding: 10px 10px;
+        letter-spacing: 2px;
+        cursor: pointer;
+        max-height: 50px;
+        width: 100%;
+    }
+
+    .block {
+        width: 100%;
+    }
+
+    .header-top .header-container .logo {
+        padding-top: 0;
+    }
+
+    .header-top .header-container .menu-icon .icon-circle {
+        top: 30%;
+        left: 70%;
+    }
+
+    .header-top .header-container .menu-icon .icon-m {
+        top: 30px;
+        left: 65px;
+    }
+
+    .header-top.header-stickytop {
+        height: 70px;
+    }
+
+    .town_header {
+        color: #ffffff;
+        font-weight: 700;
+        letter-spacing: 3px;
+        font-size: 30px;
+        position: absolute;
+        top: 25%;
+        left: 2%;
+    }
+
+    .town_header span {
+        font-size: 15px;
+        background-color: #AC363B;
+        padding: 0 10px;
+        color: azure;
+        font-weight: 300;
+    }
+
+    .concept {
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    .town_blocks {
+        width: 95%;
+        margin-top: 30px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-left: 0;
+        padding-right: 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        row-gap: 15px;
+    }
+
+    .town_block {
+        width: 100%;
+    }
+}
