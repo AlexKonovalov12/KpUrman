@@ -419,7 +419,7 @@
                             <div class="dsn-grid-hover-label"></div>
                             <div class="dsn-grid-hover-pic"></div>
                             <div class="dsn-grid-slider-effect">
-                             <div class="img cover-bg" data-id="0" data-image-src="images/town.webp"                            
+                             <div class="img cover-bg" data-id="0" data-image-src="images/town.webp"></div>                          
                                 <div class="img cover-bg" data-id="1" data-image-src="assets/img/slider-1.webp"
                                     data-overlay="2"></div>
                                 <div class="img cover-bg" data-id="2" data-image-src="assets/img/slider-4.webp"></div>
@@ -511,6 +511,14 @@
                         </div>
                         <div class="help-block with-errors"></div>
                     </div>
+                    
+                      <div style="display: none;" class="col-md-12 form-group">
+                        <div class="entry-box">
+                            <input type="text" name="email" placeholder="Почта" />     </div>
+                        <div class="help-block with-errors"></div>
+                    </div>
+                    
+                    
                 </div>
                 <button type="submit" class="modal__btn">Отправить &rarr;</button>
             </form>
@@ -535,6 +543,11 @@
             var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/" + id + "/init?referrer=" + encodeURIComponent(d.location.href);
             var js = d.createElement(s); js.charset = "UTF-8"; js.async = 1; js.src = p + h + u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
         })(window, document, 'script', 'cloud.roistat.com', 'b1e98b15beceb494b0afd84cb26f028d');
+ 
+    window.onRoistatModuleLoaded = function () {
+    window.roistat.multiwidget.isVisible = false;
+}
+    
     </script>
     <!-- Roistat Counter End -->
 </body>

@@ -4,11 +4,41 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
-    let modalButtons = Array.from(document.querySelectorAll('.js-open-modal')),
+    let intro = document.querySelector('.intro'),
         overlay = document.querySelector('.js-overlay-modal'),
+        townOverlay = document.querySelector('.js-overlay-modal-town'),
         modalWindow = document.querySelector('.modal_window'),
+        townModal = document.querySelector('.townhouse_modal'),
         phonePlace = document.getElementById('modal_form_phone'),
-        closeButton = document.querySelector('.js-modal-close');
+        closeButton = Array.from(document.querySelectorAll('.js-modal-close')),
+        townhouses = Array.from(document.querySelectorAll('.townhouses')),
+        modalButtons = Array.from(document.querySelectorAll('.js-open-modal')),
+        mapButtons = Array.from(document.querySelectorAll('.map_buttons'));
+
+    
+    townhouses.forEach((house) => {
+        house.addEventListener('click', function () {
+            let name = house.dataset.name;
+            let blockName = document.querySelector('.block_name');
+            let townPlanImage = document.querySelector('.townhouse_plan_image');
+            
+            townOverlay.classList.add('active');
+          // townPlanImage.src = `./images/townhouses/${name}.png`;
+            blockName.innerHTML = `<span>Блок </span> ${name}`;
+            $(".svgblock").each(function(){ $(this).hide();});           
+            $("#svg"+name).show();            
+            mapButtons.forEach((buttons) => {
+                if (buttons.id === name) {
+                    buttons.classList.add('buttons_active');
+                }
+            });
+            townModal.style.display = 'block';
+            townModal.scrollIntoView(top);
+            intro.classList.add('background_scroll');
+        })
+    })
+   
+    
 
     modalButtons.forEach((el) => {
         el.addEventListener('click', function (e) {
@@ -16,29 +46,51 @@ document.addEventListener('DOMContentLoaded', function () {
             modalWindow.classList.add('active');
             overlay.classList.add('active');
         });
-    })
-    
-    
-       
+    });
 
-    closeButton.addEventListener('click', function (e) {
-        modalWindow.classList.remove('active');
-        overlay.classList.remove('active');
+
+    closeButton.forEach((el) => {
+        el.addEventListener('click', function () {
+            if (el.classList.contains('town_cross')) {
+                window.scrollTo(0,0);
+                townModal.style.display = 'none';
+                mapButtons.forEach((buttons) => {
+                    buttons.classList.remove('buttons_active');
+                    
+                });
+                townOverlay.classList.remove('active');
+                intro.classList.remove('background_scroll');
+            } else {
+                modalWindow.classList.remove('active');
+                overlay.classList.remove('active');
+            }
+        })
     });
 
 
     document.body.addEventListener('keyup', function (e) {
-        var key = e.keyCode;
-        if (key == 27) {
-            document.querySelector('.modal_window.active').classList.remove('active');
-            document.querySelector('.overlay').classList.remove('active');
+        var key = e.code;
+        if (key == 'Escape') {
+            modalWindow.classList.remove('active');
+            overlay.classList.remove('active');
         };
     }, false);
 
 
     overlay.addEventListener('click', function () {
-        document.querySelector('.modal_window.active').classList.remove('active');
+        modalWindow.classList.remove('active');
         this.classList.remove('active');
+    });
+
+    townOverlay.addEventListener('click', function () {
+        window.scrollTo(0, 0);
+        townModal.style.display = 'none';
+        mapButtons.forEach((buttons) => {
+            buttons.classList.remove('buttons_active');
+
+        });
+        this.classList.remove('active');
+        intro.classList.remove('background_scroll');
     });
 
     
@@ -47,5 +99,4 @@ document.addEventListener('DOMContentLoaded', function () {
             phonePlace.value = '+7'
         }
     }) 
-
 }); 

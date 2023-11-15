@@ -264,16 +264,15 @@
     }
 
     .mainpage_button {
-        
-        top: 80%;
+
         left: 7%;
     }
 
     .game-button {
-      
+
         padding: 10px 10px;
         font-size: 12px;
-       
+
         width: 200px;
     }
 
@@ -281,8 +280,59 @@
     .play-icon {
         width: 20px;
         height: 20px;
-        
+
     }
 
 
+}
+
+@media (max-width: 389px) {
+    .mainpage_button {
+        top: 75%;
+    }
+
+    .cback {
+        width: 120px;
+        height: 120px;
+    }
+
+    .header-project .content h3 {
+        color: white;
+    }
+
+    .header-project .content h2 {
+        font-size: 32px;
+    }
+
+    .town_header span {
+        font-size: 11px;
+    }
+
+    .modal__title {
+        font-size: 25px;
+    }
+
+    .modal__btn {
+        font-size: 20px;
+    }
+
+    .wrapper_button {
+        top: 60%;
+    }
+
+    .wrapper_text {
+        width: 80%;
+    }
+
+    .description_bottom {
+        font-size: 14px;
+    }
+
+    .text_head {
+        font-size: 20px;
+    }
+
+    .stage_list {
+        justify-content: space-between;
+    }
 }

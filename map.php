@@ -138,13 +138,386 @@
 
     <main class="root">
         <div class="dsn-grid-color">
+            <section class="intro section-padding" data-aos="fade-up">
+                
+                <div class="container" style="margin-top: 120px;">
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div style="text-align: center;" class="info-title">
+                                <h1>Выберите участок</h1>
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                        <?
+                            $mhost = 'localhost';//	Хост mysql
+                            $muser = 'u0980170_default';//	Пользователь mysql
+                            $mpass = '31_0lp7W';//	Пароль mysql
+                            $mbase = 'u0980170_default';//	База mysql
+
+
+                            $mysql=new mysqli($mhost,$muser,$mpass,$mbase);
+                            $charset='utf8';
+                            $mysql->set_charset($charset);
+                            if($mysql->connect_errno)
+                                exit('<h1 align="center">Не удалось подключиться к БД</h1><br>Причина: '.$mysql->connect_error);
+                        ?>
+
+                        <style>
+                            @import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
+
+                            body{
+                                background-color: #364c3f;
+                            }
+                            .loginCard {
+                                z-index: 9999999;
+                                top: calc(50% - 270px);
+                            width: 400px;
+                            height: 540px;
+                            background: #ffffff9c;
+                            border-radius: 3px;
+                            padding: 56px 32px;
+                            display: flex;
+                            flex-direction: column;
+                            position: fixed;
+                            left:calc(50% - 200px);
+                            color: #77531E;
+                            box-sizing: border-box;
+                            background-image: url("assets/img/bg-popup.webp");
+                            background-position: center top;
+                            background-size: cover;
+                            filter: drop-shadow(0 2px 1px rgba(0,0,0,.15) )
+                            }
+                            .innerCard {
+                            background: #ffffff9c;
+                            padding: 24px 24px 30px 24px;
+                            display: block;
+                            margin-top: auto;
+                            border: 1px solid #ededed;
+                            border-radius: 3px;
+                            }
+                            .buttonWrapper {
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+                            padding: 0 20px;
+                            position: absolute;
+                            bottom: -36px;
+                            left: 0;
+                            box-sizing: border-box;
+                            }
+
+                            /* type */
+                            h1 {
+
+                            font-size: 20px;
+
+                            }
+                            p {
+                            text-align: center;
+                            font-family: system-ui, sans-serif;
+                            letter-spacing: 1px;
+                            }
+
+                            /* inputs */
+
+                            input {
+
+                            border: 0;
+                            height: 56px;
+                            width: 100%;
+                            background: #f9f7f3;
+                            border-radius: 6px 6px 0 0;
+                            padding: 0 1em;
+                            box-sizing: border-box;
+                            }
+
+                            ::placeholder {
+                            font-size: 16px;
+                            line-height: 1.2;
+                            color: #364c3f;
+                            }
+
+                            /* links and buttons */
+
+                            button, .social {
+                            border: none;
+                            cursor: pointer;
+                            transition-duration: 150ms;
+                            transition-timing-function: cubic-bezier(.68,-.55,.265,1.55);
+                            }
+                            button:hover, .social:hover {
+                            transform: scale(1.13     );
+                            }
+
+                            .extraLinks {
+                            float: right;
+                            font-family: system-ui, sans-serif;
+                            }
+                            a {
+                            color: inherit;
+                            font-size: 14px;
+                            }
+                            .nav__list-item a{
+                            
+                            color: #2f4037;
+                            font-size: 1.8rem;
+
+                            }
+
+                            .extraLinks a:first-child {
+                            text-decoration: none;
+                            opacity: .7;
+                            }
+                            .extraLinks a:last-child {
+                            margin-left: 12px;
+                            font-weight: 600;
+                            }
+                            .close, .submitButton, .social {
+                            border-radius: 50%;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            }
+                            .submitButton {
+                            background: #FFE4BD;
+                            height: 72px;
+                            width: 72px;
+                            margin-left: auto;
+                            }
+                            .close {
+                            height: 24px;
+                            width: 24px;
+                            background: #FF8783;
+                            position: absolute;
+                            top: 16px;
+                            right: 16px;
+                            }
+                            .close svg {
+                            transform: translatey(-3px);
+                            }
+                            .social {
+                            width: 56px;
+                            height: 56px;
+                            border-radius: 50%;
+                            }
+                            .social svg {
+                            height: 1.5em;
+                            width: 1.5em;
+                            fill: white;
+                            }
+                            .twitter {
+                            background: #1DCAFF;
+                            margin-right: 16px;
+                            }
+                            .facebook {
+                            background: #3B5998;
+                            }
+
+                            path{
+                                cursor: pointer;
+                            }
+
+
+                            .underlayer {
+                            position: fixed;
+                            width: 100%;
+                            height: 100%;
+                            top:0;
+                            left:0;
+                            background: rgba(0,0,0,0.8);
+                            font-size: 100%;
+                            font-family: 'Roboto Slab', Georgia, serif;
+                            z-index: 9999999;
+                            }
+
+                            @media (max-width: 1199px){
+                                
+                                .svgg{
+                                    padding-top:-50px;
+                                    height: 100vh;
+                                    width: 100vw;
+                                    transform:scale(2,2) rotate(45deg);
+                                
+                                    -webkit-transform:scale(2,2) rotate(45deg);
+                                    bottom: 100px;
+                                }
+                                
+                                    .intro .info-title h1 {
+                                font-size: 20px;
+                                text-transform: uppercase;
+                                
+                                }
+                            }   
+                        </style>
+
+                                <!-- transparent fullscreen background -->
+                            <div style="display: none;" class="underlayer">
+                                <div class="loginCard">
+                                <button onclick="hidee2()" class="close">
+                                    <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M21.9579 6.23592L20.2479 4.52588L13.4683 11.3054L6.6888 4.52588L4.97876 6.23592L11.7583 13.0155L4.97876 19.795L6.6888 21.505L13.4683 14.7255L20.2479 21.505L21.9579 19.795L15.1784 13.0155L21.9579 6.23592Z" fill="#CA123E"/>
+                                </svg>
+
+                                </button>
+                                <div style="text-align: center;" class="innerCard">
+                                    <h1>УЧАСТОК №<b id="number">121</b></h1>
+                                    <p style="text-transform: uppercase;
+                                    font-weight: bold;
+                                    font-size: 14px;" >Площадь: <span id="sotka"></span> соток</p>
+                                    <p id="status" style="text-transform: uppercase;
+                                    font-weight: bold;
+                                    font-size: 14px;color: #136816;">Свободно</p>
+                                    
+                                    <div id="inputs">
+                                    <form method="post" action="contactMap.php">
+                                    <input name="name" style="text-align: center; margin-top: 15px;" type="text" placeholder="Ваше имя" required>
+                                    <input name="phone" style="text-align: center; margin-top: 15px;" type="text" placeholder="Номер телефона" required>
+                                    <input name="number" id="inputNumber" type="hidden" value=""/>
+                                <button type="submit" style="  margin-top:15px;
+                                display: block;
+                                border: 0;
+                                height: 56px;
+                                width: 100%;
+                                    background: #b62930;
+                                    color: white; 
+                                    border-radius: 0 0 6px 6px;
+                                padding: 0 1em;
+                                box-sizing: border-box;">Забронировать</button>
+                                </form>
+                                </div>
+                                </div>
+                                
+
+                                </div>
+
+                                </div>  
+
+                                <?
+                                include("svgBefore.php");
+                                $res=$mysql->query("SELECT * FROM urman23 WHERE town=0");
+                                while($path=$res->fetch_assoc()){
+                                    
+                                    if ($path['status']=='Продано') $fill='#ab363b';
+                                    else if ($path['status']=='Бронь') $fill='#969390';
+                                    else if ($path['status']=='Свободно') $fill='#EDD0B5';
+                                    else if ($path['status']=='Строительство') $fill='#fff';
+                                        else if ($path['status']=='Готовый дом') $fill='#4caf50';
+                                    echo '<path fill-rule="evenodd" clip-rule="evenodd" onclick="showw2(`'.$path['number'].'`,`'.$path['status'].'`,`'.$path['sotka'].'`)" id="'.$path['number'].'" d="'.$path['d'].'" fill="'.$fill.'" />';
+                                }
+                                include("svgAfter.php");
+                                include("svgInfo.php");
+
+                                ?>
+
+
+                                <script src="assets/js/jquery-3.1.1.min.js"></script>
+                                
+                      
+
+                                
+
+                                <script>
+                                function showw2(id,status,sotka, town=0){
+                                        $(".underlayer").show();
+                                        
+                                        $(".underlayer").css('pointer-events','auto');
+                                        
+                                    
+                                            $("#number").html(id);
+                                                $("#inputNumber").val(id);
+                                            $("#status").html(status);
+                                            $("#sotka").html(sotka);
+                                            
+                                            if (status=='Бронь')
+                                            {
+                                            $("#status").css("color","#7d725d");
+                                            $("#inputs").hide();
+                                            
+                                            }
+                                            else   if (status=='Свободно')
+                                            {
+                                            $("#status").css("color","#186e1c");
+                                            $("#inputs").show();
+                                            }
+                                            // $("#vport").attr('content','width=device-width, initial-scale=2');
+                                            // $("#vport").attr('content','width=device-width, initial-scale=1');
+                                    
+                                    //       $('html,body').animate({
+                                //  scrollTop: $(this).offset().top - ( $(window).height() - $(this).outerHeight(true) ) / 2
+                                //}, 200);                            
+                                
+                                
+                                
+                                
+                                    }
+                                    
+                                    
+                                        $(".underlayer").click(function(){
+                                    
+                                        $(".underlayer").hide();
+                                        $(".underlayer").css('pointer-events','none');
+                                            // $(".modal2-wrap").css('opacity','0');
+                                            
+
+                                        
+                                    });
+                                    
+                                    function hidee2(){
+                                            $(".underlayer").hide();
+                                    
+                                        $(".underlayer").css('pointer-events','none');
+                                    
+                                    }
+                                    
+                                    
+                                    $(".loginCard").click(function(event){
+                                        
+                                        event.stopPropagation();
+                                    });
+                                    
+
+
+
+
+                                $( "1path11" ).each(function( index ) {
+                                    
+                                        $.ajax({
+                                    method: "POST",
+                                    dataType: "html",
+                                    url: "mapAdd.php",
+                                        data: {
+                                        "id": $(this).attr('id'),
+                                        "d": $(this).attr('d'),
+                                    "fill": $(this).attr('fill')
+                                    
+                                    }
+                                    })
+                                        .done(function (data) {
+                                    
+                                });
+                                
+                                });
+                                </script>
+
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            
+            <!-- End Footer
+            ================================================== -->
 
     
 
-
-            <section class="intro section-padding" data-aos="fade-up">
-                <div class="townhouse_modal">
-                    <h3 class="head_text_town">Выберите участок</h3>
+            
+        </div>
+        <div class="townhouse_modal">
+                    <h3 class="head_text_town"></h3>
+                    <svg class="town_cross js-modal-close" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path
+                            d="M23.954 21.03l-9.184-9.095 9.092-9.174-2.832-2.807-9.09 9.179-9.176-9.088-2.81 2.81 9.186 9.105-9.095 9.184 2.81 2.81 9.112-9.192 9.18 9.1z" />
+                    </svg>
                     <div class="town_wrapper">
                         <section id="image-carousel" class="splide" aria-label="Beautiful Images">
                             <div class="splide__track">
@@ -171,55 +544,117 @@
                             </div>
                             <div class="slider_text">
                                 <p>ТАУНХАУСЫ</p>
-                                <p><span>Блок </span> А</p>
+                                <p class="block_name"><span>Блок </span> А</p>
                             </div>
                             <button class="townhouse_cback js-open-modal">Обратная связь</button>
                         </section>
-                        <div class="town_map">
-                            <div class="town_svg">
-                                <svg width="100%" height="100%" viewBox="0 0 1013 370" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg">
-                                    <rect x="833.5" y="2.5" width="177" height="365" fill="#ECD5A2" stroke="#364C3F"
-                                        stroke-width="5" />
-                                    <rect x="671.5" y="2.5" width="162" height="365" fill="#ECD5A2" stroke="#364C3F"
-                                        stroke-width="5" />
-                                    <rect x="509.5" y="2.5" width="162" height="365" fill="#ECD5A2" stroke="#364C3F"
-                                        stroke-width="5" />
-                                    <rect x="346.5" y="2.5" width="162" height="365" fill="#ECD5A2" stroke="#364C3F"
-                                        stroke-width="5" />
-                                    <rect x="184.5" y="2.5" width="162" height="365" fill="#ECD5A2" stroke="#364C3F"
-                                        stroke-width="5" />
-                                    <rect x="2.5" y="2.5" width="182" height="365" fill="#ECD5A2" stroke="#364C3F"
-                                        stroke-width="5" />
-                                    <rect x="69" y="218" width="875" height="91" fill="#1F2923" />
-                                    <path
-                                        d="M106.795 240.633L114.42 255.406L122.045 240.633H133.125L120.794 262.138L133.453 284H122.283L114.42 268.958L106.586 284H95.3872L108.076 262.138L95.7148 240.633H106.795ZM165.71 276.494V284H143.818V276.494H165.71ZM147.124 240.633V284H137.414V240.633H147.124Z"
-                                        fill="white" />
-                                    <path
-                                        d="M280.87 276.494V284H258.978V276.494H280.87ZM262.284 240.633V284H252.574V240.633H262.284Z"
-                                        fill="white" />
-                                    <path
-                                        d="M608.87 276.494V284H586.978V276.494H608.87ZM590.284 240.633V284H580.574V240.633H590.284Z"
-                                        fill="white" />
-                                    <path
-                                        d="M770.87 276.494V284H748.978V276.494H770.87ZM752.284 240.633V284H742.574V240.633H752.284Z"
-                                        fill="white" />
-                                    <path
-                                        d="M436.87 276.494V284H414.978V276.494H436.87ZM418.284 240.633V284H408.574V240.633H418.284ZM469.276 259.606V267.678H439.551V259.606H469.276ZM458.852 248.079V279.651H450.095V248.079H458.852Z"
-                                        fill="white" />
-                                    <path
-                                        d="M890.87 276.494V284H868.978V276.494H890.87ZM872.284 240.633V284H862.574V240.633H872.284ZM923.276 259.606V267.678H893.551V259.606H923.276ZM912.852 248.079V279.651H904.095V248.079H912.852Z"
-                                        fill="white" />
-                                </svg>
+                        <div  class="town_map js-open-modal">
+                            <div class="town_image">
+                                   
+<?require_once("images/townhouses/blocks.svg");?>
 
                             </div>
-                            <div class="map_buttons">
+                            <div class="map_buttons" id="A">
                                 <button class="map_btn">A1</button>
                                 <button class="map_btn">A2</button>
                                 <button class="map_btn">A3</button>
                                 <button class="map_btn">A4</button>
                                 <button class="map_btn">A5</button>
                                 <button class="map_btn">A6</button>
+                            </div>
+                            <div class="map_buttons" id="B">
+                                <button class="map_btn">B1</button>
+                                <button class="map_btn">B2</button>
+                                <button class="map_btn">B3</button>
+                                <button class="map_btn">B4</button>
+                                <button class="map_btn">B5</button>
+                                <button class="map_btn">B6</button>
+                                <button class="map_btn">B7</button>
+                                <button class="map_btn">B8</button>
+                            </div>
+                            <div class="map_buttons" id="C">
+                                <button class="map_btn">C1</button>
+                                <button class="map_btn">C2</button>
+                                <button class="map_btn">C3</button>
+                                <button class="map_btn">C4</button>
+                                <button class="map_btn">C5</button>
+                                <button class="map_btn">C6</button>
+                            </div>
+                            <div class="map_buttons" id="D">
+                                <button class="map_btn">D1</button>
+                                <button class="map_btn">D2</button>
+                                <button class="map_btn">D3</button>
+                                <button class="map_btn">D4</button>
+                                <button class="map_btn">D5</button>
+                                <button class="map_btn">D6</button>
+                                <button class="map_btn">D7</button>
+                                <button class="map_btn">D8</button>
+                            </div>
+                            <div class="map_buttons" id="E">
+                                <button class="map_btn">E1</button>
+                                <button class="map_btn">E2</button>
+                                <button class="map_btn">E3</button>
+                                <button class="map_btn">E4</button>
+                                <button class="map_btn">E5</button>
+                                <button class="map_btn">E6</button>
+                                <button class="map_btn">E7</button>
+                                <button class="map_btn">E8</button>
+                                <button class="map_btn">E9</button>
+                                <button class="map_btn">E10</button>
+                                <button class="map_btn">E11</button>
+                                <button class="map_btn">E12</button>
+                                <button class="map_btn">E13</button>
+                                <button class="map_btn">E14</button>
+                            </div>
+                            <div style="direction: rtl;" class="map_buttons" id="F">
+                                <button class="map_btn">F1</button>
+                                <button class="map_btn">F2</button>
+                                <button class="map_btn">F3</button>
+                                <button class="map_btn">F4</button>
+                                <button class="map_btn">F5</button>
+                                <button class="map_btn">F6</button>
+                                <button class="map_btn" style="opacity: 0;"></button>
+                                <button class="map_btn">F7</button>
+                                <button class="map_btn">F8</button>
+                                
+                                <button class="map_btn">F9</button>
+                                <button class="map_btn">F10</button>
+                                <button class="map_btn">F11</button>
+                                <button class="map_btn">F12</button>
+                                <button class="map_btn">F13</button>
+                                <button class="map_btn">F14</button>
+                            </div>
+                            <div class="map_buttons" id="G">
+                                <button class="map_btn">G1</button>
+                                <button class="map_btn">G2</button>
+                                <button class="map_btn">G3</button>
+                                <button class="map_btn">G4</button>
+                                <button class="map_btn">G5</button>
+                                <button class="map_btn">G6</button>
+                                <button class="map_btn">G7</button>
+                                <button class="map_btn">G8</button>
+                            </div>
+                            <div class="map_buttons" id="H">
+                                <button class="map_btn">H1</button>
+                                <button class="map_btn">H2</button>
+                                <button class="map_btn">H3</button>
+                                <button class="map_btn">H4</button>
+                                <button class="map_btn" style="opacity: 0;"></button>
+                                <button class="map_btn">H5</button>
+                                <button class="map_btn">H6</button>
+                                <button class="map_btn">H7</button>
+                                <button class="map_btn">H8</button>
+                            </div>
+                            <div class="map_buttons" id="L">
+                                <button class="map_btn">L1</button>
+                                <button class="map_btn">L2</button>
+                                <button class="map_btn">L3</button>
+                                <button class="map_btn" style="opacity: 0;"></button>
+                                <button class="map_btn">L4</button>
+                                <button class="map_btn">L5</button>
+                                <button class="map_btn">L6</button>
+                                <button class="map_btn">L7</button>
+                                <button class="map_btn">L8</button>
                             </div>
                         </div>
                         <div class="blocks">
@@ -273,7 +708,7 @@
                         <div class="blocks">
                             <div class="blocks_head">
                                 <div class="blocks_head_text">
-                                    БЛОК L+ TOWN 100m2
+                                    БЛОК L+ TOWN 125m2
                                     <p>с выходом на кровлю</p>
                                 </div>
                                 <button class="blocks_head_btn js-open-modal">ЗАБРОНИРОВАТЬ</button>
@@ -356,397 +791,46 @@
                         <button type="submit" class="modal__btn">Отправить &rarr;</button>
                     </form>
                 </div>
+                <div class="overlay-town js-overlay-modal-town"></div>
                 <div class="overlay js-overlay-modal"></div>
-                <div class="container">
-                    <div class="row">
-
-                        <div class="col-lg-12">
-                            <div style="text-align: center;" class="info-title">
-                                <h1>Выберите участок</h1>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-12">
-                      
-
-    <?
-$mhost = 'localhost';//	Хост mysql
-$muser = 'u0980170_default';//	Пользователь mysql
-$mpass = '31_0lp7W';//	Пароль mysql
-$mbase = 'u0980170_default';//	База mysql
-
-
-$mysql=new mysqli($mhost,$muser,$mpass,$mbase);
-$charset='utf8';
-$mysql->set_charset($charset);
-if($mysql->connect_errno)
-	exit('<h1 align="center">Не удалось подключиться к БД</h1><br>Причина: '.$mysql->connect_error);
-
-
-?>
-
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap');
-
-body{
-    background-color: #364c3f;
-}
-.loginCard {
-    z-index: 9999999;
-    top: calc(50% - 270px);
-  width: 400px;
-  height: 540px;
-  background: #ffffff9c;
-  border-radius: 3px;
-  padding: 56px 32px;
-  display: flex;
-  flex-direction: column;
-  position: fixed;
-  left:calc(50% - 200px);
-  color: #77531E;
-  box-sizing: border-box;
-  background-image: url("assets/img/bg-popup.webp");
-  background-position: center top;
-  background-size: cover;
-  filter: drop-shadow(0 2px 1px rgba(0,0,0,.15) )
-}
-.innerCard {
-  background: #ffffff9c;
-  padding: 24px 24px 30px 24px;
-  display: block;
-  margin-top: auto;
-  border: 1px solid #ededed;
-  border-radius: 3px;
-}
-.buttonWrapper {
-  display: flex;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-  position: absolute;
-  bottom: -36px;
-  left: 0;
-  box-sizing: border-box;
-}
-
-/* type */
-h1 {
-
-  font-size: 20px;
-
-}
-p {
-  text-align: center;
-  font-family: system-ui, sans-serif;
-  letter-spacing: 1px;
-}
-
-/* inputs */
-
-input {
-  display: block;
-  border: 0;
-  height: 56px;
-  width: 100%;
-  background: #f9f7f3;
-  border-radius: 6px 6px 0 0;
-  padding: 0 1em;
-  box-sizing: border-box;
-}
-
-::placeholder {
-  font-size: 16px;
-  line-height: 1.2;
-  color: #364c3f;
-}
-
-/* links and buttons */
-
-button, .social {
-  border: none;
-  cursor: pointer;
-  transition-duration: 150ms;
-  transition-timing-function: cubic-bezier(.68,-.55,.265,1.55);
-}
-button:hover, .social:hover {
-  transform: scale(1.13     );
-}
-
-.extraLinks {
-  float: right;
-  font-family: system-ui, sans-serif;
-}
-a {
-  color: inherit;
-  font-size: 14px;
-}
-.nav__list-item a{
-   
-  color: #2f4037;
-  font-size: 1.8rem;
-
-}
-
-.extraLinks a:first-child {
-  text-decoration: none;
-  opacity: .7;
-}
-.extraLinks a:last-child {
-  margin-left: 12px;
-  font-weight: 600;
-}
-.close, .submitButton, .social {
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.submitButton {
-  background: #FFE4BD;
-  height: 72px;
-  width: 72px;
-  margin-left: auto;
-}
-.close {
-  height: 24px;
-  width: 24px;
-  background: #FF8783;
-  position: absolute;
-  top: 16px;
-  right: 16px;
-}
-.close svg {
-  transform: translatey(-3px);
-}
-.social {
-  width: 56px;
-  height: 56px;
-  border-radius: 50%;
-}
-.social svg {
-  height: 1.5em;
-  width: 1.5em;
-  fill: white;
-}
-.twitter {
-  background: #1DCAFF;
-  margin-right: 16px;
-}
-.facebook {
-  background: #3B5998;
-}
-
-path{
-    cursor: pointer;
-}
-
-
-.underlayer {
-  position: fixed;
-  width: 100%;
-  height: 100%;
-  top:0;
-  left:0;
-  background: rgba(0,0,0,0.8);
-  font-size: 100%;
-  font-family: 'Roboto Slab', Georgia, serif;
-  z-index: 9999999;
-}
-
-@media (max-width: 1199px){
-    
-    .svgg{
-        padding-top:-50px;
-        height: 100vh;
-        width: 100vw;
-        transform:scale(2,2) rotate(45deg);
-       
-        -webkit-transform:scale(2,2) rotate(45deg);
-         bottom: 100px;
-    }
-    
-        .intro .info-title h1 {
-    font-size: 20px;
-    text-transform: uppercase;
-    
-    }
-}   
-</style>
-
-<!-- transparent fullscreen background -->
-<div style="display: none;" class="underlayer">
-<div class="loginCard">
-  <button onclick="hidee2()" class="close">
-    <svg width="27" height="26" viewBox="0 0 27 26" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M21.9579 6.23592L20.2479 4.52588L13.4683 11.3054L6.6888 4.52588L4.97876 6.23592L11.7583 13.0155L4.97876 19.795L6.6888 21.505L13.4683 14.7255L20.2479 21.505L21.9579 19.795L15.1784 13.0155L21.9579 6.23592Z" fill="#CA123E"/>
-</svg>
-
-  </button>
-  <div style="text-align: center;" class="innerCard">
-    <h1>УЧАСТОК №<b id="number">121</b></h1>
-    <p style="text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;" >Площадь: <span id="sotka"></span> соток</p>
-    <p id="status" style="text-transform: uppercase;
-    font-weight: bold;
-    font-size: 14px;color: #136816;">Свободно</p>
-    
-    <div id="inputs">
-    <form method="post" action="contactMap.php">
-	<input name="name" style="text-align: center; margin-top: 15px;" type="text" placeholder="Ваше имя" required>
-    <input name="phone" style="text-align: center; margin-top: 15px;" type="text" placeholder="Номер телефона" required>
-     <input name="number" id="inputNumber" type="hidden" value=""/>
-<button type="submit" style="  margin-top:15px;
-display: block;
-  border: 0;
-  height: 56px;
-  width: 100%;
-     background: #b62930;
-    color: white; 
-    border-radius: 0 0 6px 6px;
-  padding: 0 1em;
-  box-sizing: border-box;">Забронировать</button>
-  </form>
-</div>
-  </div>
-  
-
-</div>
-
-</div>  
-
-<?
-include("svgBefore.php");
-$res=$mysql->query("SELECT * FROM urman23");
-while($path=$res->fetch_assoc()){
-    
-    if ($path['status']=='Продано') $fill='#ab363b';
-    else if ($path['status']=='Бронь') $fill='#969390';
-     else if ($path['status']=='Свободно') $fill='#EDD0B5';
-       else if ($path['status']=='Строительство') $fill='#fff';
-          else if ($path['status']=='Готовый дом') $fill='#4caf50';
-    echo '<path fill-rule="evenodd" clip-rule="evenodd" onclick="showw2(`'.$path['number'].'`,`'.$path['status'].'`,`'.$path['sotka'].'`)" id="'.$path['number'].'" d="'.$path['d'].'" fill="'.$fill.'" />';
-}
-include("svgAfter.php");
-include("svgInfo.php");
-?>
-
-
-   <script src="assets/js/jquery-3.1.1.min.js"></script>
-   <script>
-            var splide = new Splide('.splide', {
-                type: 'fade',
-                rewind: true,
-                arrows: false,
-                height: 700,
-                autoplay: true,
-            });
-            splide.mount();
-        </script>
-
-<script>
- function showw2(id,status,sotka, town=0){
-        $(".underlayer").show();
-        
-         $(".underlayer").css('pointer-events','auto');
-         
-    
-              $("#number").html(id);
-                $("#inputNumber").val(id);
-               $("#status").html(status);
-               $("#sotka").html(sotka);
-               
-               if (status=='Бронь')
-               {
-               $("#status").css("color","#7d725d");
-               $("#inputs").hide();
-               
-               }
-               else   if (status=='Свободно')
-               {
-               $("#status").css("color","#186e1c");
-               $("#inputs").show();
-              }
-            // $("#vport").attr('content','width=device-width, initial-scale=2');
-            // $("#vport").attr('content','width=device-width, initial-scale=1');
-      
-       //       $('html,body').animate({
-  //  scrollTop: $(this).offset().top - ( $(window).height() - $(this).outerHeight(true) ) / 2
-//}, 200);                            
-   
-   
-   
-   
-    }
-    
-    
-         $(".underlayer").click(function(){
-       
-         $(".underlayer").hide();
-         $(".underlayer").css('pointer-events','none');
-             // $(".modal2-wrap").css('opacity','0');
-              
-
-        
-    });
-    
-    function hidee2(){
-            $(".underlayer").hide();
-       
-         $(".underlayer").css('pointer-events','none');
-      
-    }
-    
-    
-      $(".loginCard").click(function(event){
-        
-          event.stopPropagation();
-    });
-    
-
-
-
-
-$( "1path11" ).each(function( index ) {
-    
-           $.ajax({
-      method: "POST",
-      dataType: "html",
-      url: "mapAdd.php",
-           data: {
-        "id": $(this).attr('id'),
-        "d": $(this).attr('d'),
-     "fill": $(this).attr('fill')
-     
-      }
-    })
-        .done(function (data) {
-      
-   });
- 
-});
-</script>
-
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            
-            <!-- End Footer
-            ================================================== -->
-
-    
-
-            
-        </div>
     </main>
+    
+    
+              <script><?
+                                $res=$mysql->query("SELECT * FROM urman23 WHERE town=1");
+                                while($town=$res->fetch_assoc()){
+                                    if ($town['status']=='Продано') $fill='#ab363b';
+                                    else if ($town['status']=='Бронь') $fill='#969390';
+                                    else if ($town['status']=='Свободно') $fill='#EDD0B5';
+                                    else if ($town['status']=='Строительство') $fill='#fff';
+                                        else if ($town['status']=='Готовый дом') $fill='#4caf50';
+                                    ?> $("#<?=$town['number']?>").attr("fill","<?=$fill?>");
+                                       $("#R<?=$town['number']?>").attr("fill","<?=$fill?>");
+                                                                                                            
+                                <? }
+
+                                ?>
+
+
+
+                                </script>
+                                
+                                                                                                            
     <!-- Optional JavaScript -->
-  
+    <script>
+        var splide = new Splide('.splide', {
+            type: 'fade',
+            rewind: true,
+            arrows: false,
+            height: 700,
+            autoplay: true,
+        });
+        splide.mount();
+    </script>
     <script src="assets/js/plugins.js"></script>
     <script src="assets/js/dsn-grid.js"></script>
     <script src="assets/js/custom.js?ver=3"></script>
-    <script src="assets/js/modalth.js"></script>
+    <script src="assets/js/modalth.js?ver=2"></script>
 <!-- Roistat Counter Start -->
 <script>
 (function(w, d, s, h, id) {

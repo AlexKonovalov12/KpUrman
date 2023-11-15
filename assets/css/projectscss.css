@@ -1398,9 +1398,7 @@ input {
     bottom: 0px;
   }
 
-  .stage_list {
-    gap: 30px;
-  }
+  
 
   .stage {
     font-size: 40px;
@@ -1654,7 +1652,7 @@ input {
 
   .wrapper_button {
     position: absolute;
-    top: 100px;
+    top: 60%;
   }
 
   .btn {
@@ -1782,7 +1780,7 @@ input {
     color: #F2F2F1;
     font-size: 22px;
     font-weight: 300;
-    gap: 50px;
+    justify-content: space-between;
     width: 100%;
     padding-left: 0;
   }

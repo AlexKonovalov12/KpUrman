@@ -52,9 +52,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }) 
 
-    var element = document.getElementById('modal_form_phone');
-    var maskOptions = {
-        mask: '+{7}(000)000-00-00'
-    };
+   
 
 }); 

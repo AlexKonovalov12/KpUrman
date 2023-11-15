@@ -142,11 +142,11 @@
 
             <header class="header-project content cover-bg " data-overlay="2">
                 <div class="glitch">
-                    <div class="glitch__img cover-bg " data-image-src="assets/img/slider-4.webp"></div>
-                    <div class="glitch__img cover-bg " data-image-src="assets/img/slider-4.webp"></div>
-                    <div class="glitch__img cover-bg " data-image-src="assets/img/slider-4.webp"></div>
-                    <div class="glitch__img cover-bg " data-image-src="assets/img/slider-4.webp"></div>
-                    <div class="glitch__img cover-bg " data-image-src="assets/img/slider-4.webp"></div>
+                    <div class="glitch__img cover-bg " data-image-src="images/conception_images/conception_4.webp"></div>
+                    <div class="glitch__img cover-bg " data-image-src="images/conception_images/conception_4.webp"></div>
+                    <div class="glitch__img cover-bg " data-image-src="images/conception_images/conception_4.webp"></div>
+                    <div class="glitch__img cover-bg " data-image-src="images/conception_images/conception_4.webp"></div>
+                    <div class="glitch__img cover-bg " data-image-src="images/conception_images/conception_4.webp"></div>
                 </div>
                 <div class="container h-100">
                     <div class="row align-items-center h-100">
@@ -170,7 +170,7 @@
                                         <div class="post-format">
 
                                             <picture>
-                                                <img src="assets/img/skandinavia.webp" alt="">
+                                                <img src="images/conception_images/conception_1.webp" alt="">
                                             </picture>
 
 
@@ -198,7 +198,7 @@
                                         <div class="post-format">
 
                                             <picture>
-                                                <img src="assets/img/slider-4.webp" alt="">
+                                                <img src="images/conception_images/conception_3.webp" alt="">
                                             </picture>
 
                                         </div>
@@ -222,7 +222,7 @@
                                         <div class="post-format">
 
                                             <picture>
-                                                <img src="assets/img/project3-2.webp" alt="">
+                                                <img src="images/conception_images/conception_8.webp" alt="">
                                             </picture>
 
                                         </div>
@@ -256,7 +256,7 @@
 
             <div class="content-block proj-full">
                 <div class="box-im">
-                    <img src="assets/img/project3-1.webp" alt="">
+                    <img src="images/conception_images/conception_12.webp" alt="">
                 </div>
             </div>
 
@@ -284,7 +284,7 @@
                                         <div class="post-format">
 
                                             <picture>
-                                                <img src="assets/img/p1.webp" alt="">
+                                                <img src="images/conception_images/conception_8.webp" alt="">
                                             </picture>
 
                                         </div>
@@ -308,7 +308,7 @@
                                         <div class="post-format">
 
                                             <picture>
-                                                <img src="assets/img/p2.webp" alt="">
+                                                <img src="images/conception_images/conception_7.webp" alt="">
                                             </picture>
 
                                         </div>
@@ -428,6 +428,9 @@
             var u = /^.*roistat_visit=[^;]+(.*)?$/.test(d.cookie) ? "/dist/module.js" : "/api/site/1.0/" + id + "/init?referrer=" + encodeURIComponent(d.location.href);
             var js = d.createElement(s); js.charset = "UTF-8"; js.async = 1; js.src = p + h + u; var js2 = d.getElementsByTagName(s)[0]; js2.parentNode.insertBefore(js, js2);
         })(window, document, 'script', 'cloud.roistat.com', 'b1e98b15beceb494b0afd84cb26f028d');
+       window.onRoistatModuleLoaded = function () {
+    window.roistat.multiwidget.isVisible = false;
+}
     </script>
     <!-- Roistat Counter End -->
 </body>
